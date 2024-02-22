@@ -31,11 +31,11 @@ module.exports = {
       const senderName = senderInfo[senderID].name;
       const prompt = event.body.substring(prefix.length).trim();
       if (!prompt) {
-        await message.reply("🌱𝙎𝘼𝙉𝘾𝙃𝙊𝙆𝙐𝙄𝙉𝘷2🌱\nദ്ദി ˉ͈̀꒳ˉ͈́ )✧ハロー harō");
+        await message.reply("🌱𝙎𝘼𝙉𝘾𝙃𝙊𝙆𝙐𝙄𝙉𝘷2🌱\nᕦʕ . ☯ ᴥ ☯ . ʔᕤharō");
         return;
       }
       const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(prompt)}`);
-      const answer = `🌱𝙎𝘼𝙉𝘾𝙃𝙊𝙆𝙐𝙄𝙉.𝘷2🌱\n-------------------------------\n 💬»[${senderName}]\n${response.data.answer}~🍀`;
+      const answer = `🌱𝙎𝘼𝙉𝘾𝙃𝙊𝙆𝙐𝙄𝙉.𝘷2🌱\n---------------------------------\n 💬»[${senderName}]\n${response.data.answer}~🍀`;
 
       await message.reply(answer);
 
