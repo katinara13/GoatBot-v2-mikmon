@@ -35,7 +35,7 @@ module.exports = {
       }
       const prompt = event.body.substring(prefix.length).trim();
       if (!prompt) {
-        await message.reply("𝙎𝘼𝙉𝘾𝙃𝙊𝙆𝙐𝙄𝙉𝘷2🌸:\n\n[ദ്ദി ˉ͈̀꒳ˉ͈́ )✧]....?");
+        await message.reply("𝙎𝘼𝙉𝘾𝙃𝙊𝙆𝙐𝙄𝙉𝘷2🌸:\n\n[(=🝦 ༝ 🝦=)]....?");
         return;
       }
       const senderID = event.senderID;
