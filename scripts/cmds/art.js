@@ -30,7 +30,7 @@ const models = {
 module.exports = {
   config: {
     name: "art",
-    aliases:["anime","animefy"], 
+    aliases:["animefy"], 
     version: "1.0",
     author: "SiAM",// Don't change 
     countDown: 15,
