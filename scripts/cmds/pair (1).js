@@ -1,55 +1,45 @@
-const axios = require ("axios");
-const fs = require ("fs-extra");
+const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
   config: {
-    name: "pair",
-    aliases: ["love"],
+    name: "lofianime",
+    aliases: ["aestheticanime","loffyanime"],
+    author: "Kshitiz",
     version: "1.0",
-    author: "Rishad",
-    countDown: 5,
+    cooldowns: 5,
     role: 0,
-    shortDescription: " ",
-    longDescription: "",
+    shortDescription: "Get aesthetic lo-fi anime videos",
+    longDescription: "Get aesthetic lo-fi anime videos to relax and enjoy.",
     category: "fun",
-    guide: "{pn}"
+    guide: "{p}lofianime",
   },
 
-  onStart: async function({ api, event, threadsData, usersData }) {
+  onStart: async function ({ api, event, args, message }) {
+    api.setMessageReaction("🕐", event.messageID, (err) => {}, true);
 
-    const { threadID, messageID, senderID } = event;
-    const { participantIDs } = await api.getThreadInfo(threadID);
-    var tle = Math.floor(Math.random() * 101);
-    var namee = (await usersData.get(senderID)).name
-    const botID = api.getCurrentUserID();
-    const listUserID = participantIDs.filter(ID => ID != botID && ID != senderID);
-    var id = listUserID[Math.floor(Math.random() * listUserID.length)];
-    var name = (await usersData.get(id)).name
-    var arraytag = [];
-    arraytag.push({ id: senderID, tag: namee });
-    arraytag.push({ id: id, tag: name });
+    try {
+      const response = await axios.get(`https://lofi-anime.onrender.com/kshitiz`, { responseType: "stream" });
 
-    let Avatar = (await axios.get(`https://graph.facebook.com/${senderID}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" })).data;
-    fs.writeFileSync(__dirname + "/cache/avt.png", Buffer.from(Avatar, "utf-8"));
+      const tempVideoPath = path.join(__dirname, "cache", `${Date.now()}.mp4`);
 
-    let gifLove = (await axios.get(`https://i.ibb.co/wC2JJBb/trai-tim-lap-lanh.gif`, { responseType: "arraybuffer" })).data;
-    fs.writeFileSync(__dirname + "/cache/giflove.png", Buffer.from(gifLove, "utf-8"));
+      const writer = fs.createWriteStream(tempVideoPath);
+      response.data.pipe(writer);
 
-    let Avatar2 = (await axios.get(`https://graph.facebook.com/${id}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" })).data;
-    fs.writeFileSync(__dirname + "/cache/avt2.png", Buffer.from(Avatar2, "utf-8"));
+      writer.on("finish", async () => {
+        const stream = fs.createReadStream(tempVideoPath);
 
-    var imglove = [];
+        message.reply({
+          body: `Aesthetic Anime Video`,
+          attachment: stream,
+        });
 
-    imglove.push(fs.createReadStream(__dirname + "/cache/avt.png"));
-    imglove.push(fs.createReadStream(__dirname + "/cache/giflove.png"));
-    imglove.push(fs.createReadStream(__dirname + "/cache/avt2.png"));
-
-    var msg = {
-      body: `🥰Successful pairing!💌Wish you two hundred years of happiness💕Double ratio: ${tle}% ${namee} 💓 ${name}`,
-      mentions: arraytag,
-      attachment: imglove
-    };
-
-    return api.sendMessage(msg, event.threadID, event.messageID);
+        api.setMessageReaction("☕", event.messageID, (err) => {}, true);
+      });
+    } catch (error) {
+      console.error(error);
+      message.reply("Sorry, an error occurred while processing your request.");
+    }
   }
 };
