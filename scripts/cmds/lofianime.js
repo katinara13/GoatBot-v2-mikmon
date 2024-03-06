@@ -31,7 +31,7 @@ module.exports = {
         const stream = fs.createReadStream(tempVideoPath);
 
         message.reply({
-          body: `Aesthetic Anime Video`,
+          body: `[𝘼𝙀𝙎𝙏𝙃𝙀𝙏𝙄𝙌𝙐𝙀 𝕬𝖓𝖎𝖒𝖊☕\n🦋⃤ ⚪🔵🔴]`,
           attachment: stream,
         });
 
