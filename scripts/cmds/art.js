@@ -29,7 +29,7 @@ const models = {
 
 module.exports = {
   config: {
-    name: "Animirro",
+    name: "art",
     aliases:["anime","animefy"], 
     version: "1.0",
     author: "SiAM",// Don't change 
