@@ -64,28 +64,31 @@ const names = categories[category].commands.sort();
 
       const helpListImages = [
         	'https://i.imgur.com/xyDcrW3.jpeg',
-
-				'https://i.imgur.com/wdZLWTU.jpeg',
-
-				'https://i.imgur.com/cJksczg.jpeg',
-
-				'https://i.imgur.com/URCFjrS.jpeg',
-
-				'https://i.imgur.com/iAHVc1a.jpeg',
-													'https://i.imgur.com/OSWG34k.jpeg',
-
-				'https://i.imgur.com/sTHeaMB.jpeg',
-
-				'https://i.imgur.com/6zzEoxf.jpeg',
-
-				'https://i.imgur.com/rDsUmFW.jpeg',
-
-				'https://i.imgur.com/Ew37GbZ.jpeg',
-
-				'https://i.imgur.com/QXnv0P8.jpeg',                                    
-				'https://i.imgur.com/f755v5B.jpeg', 
-
-				'https://i.imgur.com/7g5AKgh.jpeg',
+"https://i.imgur.com/WWGiRvB.mp4",
+"https://i.imgur.com/20QmmsT.mp4",
+"https://i.imgur.com/nN28Eea.mp4",
+"https://i.imgur.com/fknQ3Ut.mp4",
+"https://i.imgur.com/yXZJ4A9.mp4",
+"https://i.imgur.com/aWIyVpN.mp4",
+"https://i.imgur.com/aFIwl8X.mp4",
+"https://i.imgur.com/SJ60dUB.mp4",
+"https://i.imgur.com/ySu69zS.mp4",
+"https://i.imgur.com/mAmwCe6.mp4",
+"https://i.imgur.com/Sbztqx2.mp4",
+"https://i.imgur.com/s2d0BIK.mp4",
+"https://i.imgur.com/rWRfAAZ.mp4",
+"https://i.imgur.com/dYLBspd.mp4",
+"https://i.imgur.com/HCv8Pfs.mp4",
+"https://i.imgur.com/jdVLoxo.mp4",
+"https://i.imgur.com/hX3Znez.mp4",
+"https://i.imgur.com/cispiyh.mp4",
+"https://i.imgur.com/ApOSepp.mp4",
+"https://i.imgur.com/lFoNnZZ.mp4",
+"https://i.imgur.com/qDsEv1Q.mp4",
+"https://i.imgur.com/NjWUgW8.mp4",
+"https://i.imgur.com/ViP4uvu.mp4",
+"https://i.imgur.com/bim2U8C.mp4",
+"https://i.imgur.com/YzlGSlm.mp4",
       ];
 
       const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
