@@ -1,20 +1,20 @@
 module.exports = {
   config: {
-    name: "pm",
-    aliases: ["privatemessage"],
+    name: "pv",
+    aliases: ["privatemessage","pm"],
     version: "1.0",
-    author: "luffy",
-    countDown: 5,
-    role: 2,
+    author: "Aesther",
+    countDown: 1,
+    role: 0,
     shortDescription: {
-      en: "Send anonymous message to user"
+      en: "message Anonime pour les PV et se faire accepter par le 𝗕𝗢𝗧☂️"
     },
     longDescription: {
-      en: "Send anonymous message using thread or user ID"
+      en: "Envoyer des messages par le bot"
     },
-    category: "box chat",
+    category: "𝗔𝗖𝗖𝘀",
     guide:{
-      en: "{p}pm id text"
+      en: "{p}𝗣𝗩 𝗨𝗜𝗗 text"
     }
   },
   onStart: async function ({ api, event, args }) {
@@ -37,7 +37,7 @@ module.exports = {
       }]
     }, idBox, () => {
       api.sendMessage(
-        `Sent message "${message}" to ${idBox} anonymously`,
+        `▪〉💌×𝙎𝙐𝘾𝘾𝙀𝙎𝙎× \n────────────\n𝗖𝗢𝗡𝗧𝗘𝗡𝗧:\n[${message}] 💬\n🆔 : ${idBox} ☂️`,
         event.threadID
       );
     });
