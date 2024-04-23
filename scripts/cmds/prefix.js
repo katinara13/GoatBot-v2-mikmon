@@ -5,7 +5,7 @@ module.exports = {
 	config: {
 		name: "prefix",
 		version: "1.3",
-		author: "NTKhang",
+		author: "Aesther",
 		countDown: 5,
 		role: 0,
 		shortDescription: "Thay đổi prefix của bot",
@@ -46,7 +46,7 @@ module.exports = {
 			confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
 			successGlobal: "Changed prefix of system bot to: %1",
 			successThisThread: "Changed prefix in your box chat to: %1",
-			myPrefix: " \n[✰-𝗣𝗥𝗘𝗙𝗜𝗫]  :  [ %2 ]\n⊰🟢⊱┈──╌❊\n[%2𝗵𝗲𝗹𝗽📑] -𝚊𝚕𝚕 𝙲𝚖𝚍𝚜!"
+			myPrefix: "\n𝗔𝗘𝗦𝗧𝗛𝗘𝗥-𝗕𝗢𝗧\n\n ➫𝗣𝗙 : [ %2 ]\n\n🌸 [𝗚𝗢𝗔𝗧𝗧𝗕𝗢𝗧-𝗩𝟮]\n☁️ 𝘼𝘿𝙈𝙄𝙉-𝙇𝙄𝙉𝙆: \n➤https://www.facebook.com/thegodess.aesther\n✦contact 𝗔𝗗𝗠𝗜𝗡✦"
 		}
 	},
 
@@ -100,7 +100,7 @@ module.exports = {
     const name = data.name;
 	  const xyrene = {
 	    body: `🈷️${name}🈷️` + getLang("myPrefix", global.GoatBot.config.prefix, utils.getPrefix(event.threadID)),
-	    attachment: await global.utils.getStreamFromURL("https://i.postimg.cc/sX1pGjkp/received-382980121010375.jpg")
+	    attachment: await global.utils.getStreamFromURL("https://i.imgur.com/dV0G0Sw.jpeg")
 				};
 		if (event.body && event.body.toLowerCase() === "prefix")
 			return () => {
